@@ -8,6 +8,7 @@ on:
     branches:
       - 'master'
       - 'develop'
+      - 'debian'
     tags:
       - 'v*'
   schedule:
@@ -27,7 +28,7 @@ jobs:
             git@gitlab.com:whyour/qinglong.git
           ssh_private_key:
             ${{ secrets.GITLAB_SSH_PK }}
-  
+
   to_gitee:
     runs-on: ubuntu-latest
     steps:
@@ -151,7 +152,7 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
+
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v5
@@ -161,15 +162,14 @@ jobs:
             QL_BRANCH=${{ github.ref_name }}
             SOURCE_COMMIT=${{ github.sha }}
           network: host
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x,linux/386
-          # platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386
+          platforms: linux/amd64,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           context: .
           file: ./docker/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=whyour/qinglong:cache
-          cache-to: type=registry,ref=whyour/qinglong:cache,mode=max
-      
+          cache-from: type=registry,ref=whyour/qinglong:cache-debian
+          cache-to: type=registry,ref=whyour/qinglong:cache-debian,mode=max
+
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
