@@ -185,7 +185,7 @@ const Dependence = () => {
             <Input
               style={{ width: 360 }}
               placeholder={intl.get(
-                'alpine linux 镜像源, 例如 https://mirrors.aliyun.com',
+                'debian linux 镜像源, 例如 http://deb.debian.org',
               )}
               value={systemConfig?.linuxMirror}
               onChange={(e) => {

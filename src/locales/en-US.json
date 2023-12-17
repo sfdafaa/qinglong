@@ -475,6 +475,6 @@
   "代理地址, 支持HTTP(S)/SOCK5": "Proxy Address, supports HTTP(S)/SOCK5",
   "NPM 镜像源": "NPM Mirror Source",
   "PyPI 镜像源": "PyPI Mirror Source",
-  "alpine linux 镜像源, 例如 https://mirrors.aliyun.com": "Alpine Linux Mirror Source, e.g. https://mirrors.aliyun.com",
+  "debian linux 镜像源, 例如 http://deb.debian.org": "Debian Linux Mirror Source, e.g. http://deb.debian.org",
   "如果恢复失败，可进入容器执行": "If recovery fails, you can enter the container and execute"
 }
