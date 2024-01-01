@@ -8,4 +8,4 @@ RUN file $(which node)
 
 RUN node -v
 
-RUN timeout 10s npm -v
+RUN npm -v
