@@ -84,11 +84,8 @@ jobs:
           platforms: linux/arm/v6,linux/arm/v7
           context: .
           file: ./docker/Dockerfile
-          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=whyour/qinglong:cache
-          cache-to: type=registry,ref=whyour/qinglong:cache,mode=max
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
@@ -168,11 +165,8 @@ jobs:
           platforms: linux/s390x
           context: .
           file: ./docker/390.Dockerfile
-          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=whyour/qinglong:cache
-          cache-to: type=registry,ref=whyour/qinglong:cache,mode=max
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
