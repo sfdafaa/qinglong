@@ -1,6 +1,4 @@
-FROM python:3.11-alpine3.18 as builder
-
-RUN apk add --no-cache file nodejs-current npm
+FROM node:20-alpine3.18 as builder
 
 RUN which node
 
