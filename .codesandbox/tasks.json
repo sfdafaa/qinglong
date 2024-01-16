@@ -1,0 +1,77 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "pnpm install"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "pnpm start",
+      "runAtStart": true,
+      "preview": {
+        "port": 5700
+      }
+    },
+    "start:front": {
+      "name": "start:front",
+      "command": "pnpm start:front"
+    },
+    "start:back": {
+      "name": "start:back",
+      "command": "pnpm start:back"
+    },
+    "start:public": {
+      "name": "start:public",
+      "command": "pnpm start:public"
+    },
+    "start:rpc": {
+      "name": "start:rpc",
+      "command": "pnpm start:rpc"
+    },
+    "build:front": {
+      "name": "build:front",
+      "command": "pnpm build:front"
+    },
+    "build:back": {
+      "name": "build:back",
+      "command": "pnpm build:back"
+    },
+    "panel": {
+      "name": "panel",
+      "command": "pnpm panel"
+    },
+    "schedule": {
+      "name": "schedule",
+      "command": "pnpm schedule"
+    },
+    "public": {
+      "name": "public",
+      "command": "pnpm public"
+    },
+    "gen:proto": {
+      "name": "gen:proto",
+      "command": "pnpm gen:proto"
+    },
+    "prettier": {
+      "name": "prettier",
+      "command": "pnpm prettier"
+    },
+    "postinstall": {
+      "name": "postinstall",
+      "command": "pnpm postinstall"
+    },
+    "test": {
+      "name": "test",
+      "command": "pnpm test"
+    },
+    "test:coverage": {
+      "name": "test:coverage",
+      "command": "pnpm test:coverage"
+    }
+  }
+}
